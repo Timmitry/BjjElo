@@ -26,8 +26,8 @@ namespace DataImport
 
     public static class MatchProcessor
     {
-        public static List<Fighter> Fighters { get; } = new List<Fighter>();
-        public static List<MatchWithoutId> Matches { get; } = new List<MatchWithoutId>();
+        public static HashSet<Fighter> Fighters { get; } = new HashSet<Fighter>();
+        public static HashSet<MatchWithoutId> Matches { get; } = new HashSet<MatchWithoutId>();
 
 
 
@@ -38,7 +38,14 @@ namespace DataImport
             {
                 "Roger Gracie",
                 "Alexandre Ribeiro",
-                "Felipe Pena"
+                "Felipe Pena",
+                "Rodolfo Vieira",
+                "Marcus Almeida",
+                "Leonardo Nogueira",
+                "Dimitrius Souza",
+                "Braga Neto",
+                "Rodrigo Comprido",
+                "Saulo Ribeiro"
             };
 
             foreach(var hero in bjjHeroes)
@@ -79,12 +86,18 @@ namespace DataImport
                         throw new ArgumentException("Result could not be analyzed!");
                 }
 
+                int year;
+                if (!Int32.TryParse(matchInfo.Year, out year))
+                    year = 0;
+
                 var match = new MatchWithoutId()
                 {
                     Fighter1 = fighter1,
                     Fighter2 = fighter2,
-                    Result = result
+                    Result = result,
+                    Year = year
                 };
+
 
                 Matches.Add(match);
             }
@@ -97,19 +110,17 @@ namespace DataImport
             if (fullName.Equals("Unknown"))
                 return null;
 
-            var splittedName = fullName.Split(' ');
-
-
-            Debug.Assert(splittedName.Length == 2,
-                "The Name does not only consist of first- and last name!");
+            var index = fullName.LastIndexOf(' ');
+            var firstname = fullName.Substring(0, index);
+            var lastname = fullName.Substring(index + 1);
 
             var fighter
                 = Fighters
-                .FirstOrDefault(f => f.FirstName.Equals(splittedName[0]) && f.LastName.Equals(splittedName[1]));
+                .SingleOrDefault(f => f.LastName.Equals(lastname) && (f.FirstName.Contains(firstname) || firstname.Contains(f.FirstName)));
 
             if (fighter == null)
             {
-                fighter = new Fighter(null, splittedName[0], splittedName[1], null);
+                fighter = new Fighter(null, firstname, lastname, null);
                 Fighters.Add(fighter);
             }
 

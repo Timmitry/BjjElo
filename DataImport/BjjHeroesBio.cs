@@ -21,6 +21,8 @@ namespace DataImport
             {
                 var values = line.Split(',');
 
+                if (values.Length < 7)
+                    continue;
 
                 var matchInfo = new MatchInformation()
                 {
