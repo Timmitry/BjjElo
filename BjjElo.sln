@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaseClasses", "BaseClasses\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataImport", "DataImport\DataImport.csproj", "{7AF30532-4E9A-4C55-9AE3-84B7CD21EC60}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrapeData", "ScrapeData\ScrapeData.csproj", "{5DC59334-C728-4152-BBCF-39D376854DA1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{7AF30532-4E9A-4C55-9AE3-84B7CD21EC60}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AF30532-4E9A-4C55-9AE3-84B7CD21EC60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AF30532-4E9A-4C55-9AE3-84B7CD21EC60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DC59334-C728-4152-BBCF-39D376854DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DC59334-C728-4152-BBCF-39D376854DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DC59334-C728-4152-BBCF-39D376854DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DC59334-C728-4152-BBCF-39D376854DA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
