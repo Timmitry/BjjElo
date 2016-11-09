@@ -34,27 +34,38 @@ namespace DataImport
         public static void LoadAllData()
         {
             var filepath = "..\\..\\..\\Data\\";
-            var bjjHeroes = new List<string>()
-            {
-                "Roger Gracie",
-                "Alexandre Ribeiro",
-                "Felipe Pena",
-                "Rodolfo Vieira",
-                "Marcus Almeida",
-                "Leonardo Nogueira",
-                "Dimitrius Souza",
-                "Braga Neto",
-                "Rodrigo Comprido",
-                "Saulo Ribeiro"
-            };
+            //var bjjHeroes = new List<string>()
+            //{
+            //    "Roger Gracie",
+            //    "Alexandre Ribeiro",
+            //    "Felipe Pena",
+            //    "Rodolfo Vieira",
+            //    "Marcus Almeida",
+            //    "Leonardo Nogueira",
+            //    "Dimitrius Souza",
+            //    "Braga Neto",
+            //    "Rodrigo Comprido",
+            //    "Saulo Ribeiro",
+            //    "Andre Galvao"
+            //};
+            var bjjHeroesFiles = Directory.GetFiles(filepath, "*.csv", SearchOption.TopDirectoryOnly);
 
-            foreach(var hero in bjjHeroes)
+            foreach (var file in bjjHeroesFiles)
             {
-                var filename = filepath + Regex.Replace(hero, @"\s+", "") + ".csv";
-                ProcessMatchInformations(BjjHeroesBio.LoadFile(filename, hero));
+                var index = file.LastIndexOf('\\');
+                var fighterName = file.Substring(index + 1);
+                fighterName = fighterName.Replace(".csv", string.Empty);
+
+                index = fighterName.IndexOf("_");
+                var firstName = fighterName.Substring(0, index);
+                var lastName = fighterName.Substring(index + 1);
+
+
+                //var filename = filepath + Regex.Replace(file, @"\s+", "") + ".csv";
+                ProcessMatchInformations(BjjHeroesBio.LoadFile(file, firstName + " " + lastName));
             }
 
-            ProcessMatchInformations(Worlds2016.LoadFile());
+            //ProcessMatchInformations(Worlds2016.LoadFile());
         }
 
 
@@ -107,16 +118,20 @@ namespace DataImport
 
         public static Fighter GetOrCreateFighter(string fullName)
         {
-            if (fullName.Equals("Unknown"))
+            if (fullName.Equals("Unknown") || fullName.Equals("Uknown")) 
                 return null;
 
             var index = fullName.LastIndexOf(' ');
+
+            if (index < 0)
+                return null;
+
             var firstname = fullName.Substring(0, index);
             var lastname = fullName.Substring(index + 1);
 
             var fighter
                 = Fighters
-                .SingleOrDefault(f => f.LastName.Equals(lastname) && (f.FirstName.Contains(firstname) || firstname.Contains(f.FirstName)));
+                .FirstOrDefault(f => f.LastName.Equals(lastname) && (f.FirstName.Contains(firstname) || firstname.Contains(f.FirstName)));
 
             if (fighter == null)
             {

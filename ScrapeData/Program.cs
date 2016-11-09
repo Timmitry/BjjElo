@@ -12,24 +12,88 @@ namespace ScrapeData
     {
         static void Main(string[] args)
         {
-            var url = args[0];
+            var url = "http://www.bjjheroes.com/a-z-bjj-fighters-list";
 
-            if (url == String.Empty)
-                url = "http://www.bjjheroes.com/bjj-fighters/roger-gracie-bio";
+            var webclient = new WebClient();
+            var pageAsString = webclient.DownloadString(url);
 
+            var htmlDoc = new HtmlAgilityPack.HtmlDocument();
+            htmlDoc.LoadHtml(pageAsString);
+
+            var rows = htmlDoc.DocumentNode.SelectNodes("//table/tbody/tr");
+
+
+            foreach(var row in rows)
+            {
+                var cells = row.SelectNodes("./td");
+
+                var firstName = cells[0].InnerText.Trim();
+                var lastName = cells[1].InnerText.Trim();
+
+                var pageUrl = cells[0].InnerHtml;
+                pageUrl = pageUrl.Replace("<a href=\"", string.Empty);
+
+                
+                var index = pageUrl.IndexOf('"');
+
+                pageUrl = pageUrl.Substring(0, index);
+
+                if (pageUrl[0].Equals('/'))
+                {
+                    pageUrl = "http://www.bjjheroes.com" + pageUrl;
+                }
+
+                WebsiteToCsv(pageUrl, firstName, lastName);
+            }
+
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Done!");
+
+            Console.ReadLine();
+
+        }
+
+
+
+        public static void WebsiteToCsv(string url, string firstname, string lastname)
+        { 
+            //var url = args[0];
+
+            //if (url == String.Empty)
+            
             // in case you sit behind a corporate proxy
             WebClient wc = new WebClient();
-            wc.Proxy = new WebProxy("proxy.example.com", 8080);
-            var page = wc.DownloadString(url);
+            //wc.Proxy = new WebProxy("proxy.example.com", 8080);
+
+            string page;
+            try
+            {
+                page = wc.DownloadString(url);
+            }
+            catch
+            {
+                Console.WriteLine($"Website for {firstname} {lastname} does not exist, skipping...");
+                return;
+            }
+
 
             HtmlAgilityPack.HtmlDocument doc = new HtmlAgilityPack.HtmlDocument();
             doc.LoadHtml(page);
 
             // get fighter name
             var fighterInfo = doc.DocumentNode.SelectNodes("//div[@class='fighter_info_plug']/h3[@class='name']");
-            var fighterNameGrapplingRecord = fighterInfo.First().InnerText;
 
-            var fighterName = fighterNameGrapplingRecord.Replace("Grappling Record", string.Empty).Trim();
+            if (fighterInfo == null)
+            {
+                Console.WriteLine($"No fight history for fighter {firstname} {lastname} found, skipping...");
+                return;
+            }
+
+            //var fighterNameGrapplingRecord = fighterInfo.First().InnerText;
+
+            //var fighterName = fighterNameGrapplingRecord.Replace("Grappling Record", string.Empty).Trim();
 
             // parse fight history
             var rows = doc.DocumentNode.SelectNodes("//table/tbody/tr");
@@ -56,12 +120,18 @@ namespace ScrapeData
                 sb.Append(weightclass).Append(",");
                 sb.Append(stage).Append(",");
                 sb.Append(year).AppendLine();
-                
+
             }
 
+
+            var fighterNameFile = firstname.Replace(" ", string.Empty) + "_" + lastname.Replace(" ", string.Empty);
+
             // write to csv
-            var filePath = fighterName.Replace(" ", "_").ToLower() +  ".csv";
+            //var filePath = fighterName.Replace(" ", "_").ToLower() + ".csv";
+            var filePath = "..//..//..//Data//" + fighterNameFile + ".csv";
             System.IO.File.WriteAllText(filePath, sb.ToString());
+
+            Console.WriteLine($"Fight history for fighter {firstname} {lastname} successfully scraped!");
         }
     }
 }
