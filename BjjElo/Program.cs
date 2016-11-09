@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using BjjElo;
 using DataImport;
 using MySql.Data.MySqlClient;
@@ -12,8 +13,14 @@ namespace BjjElo
 {
     class Program
     {
+        [STAThread]
         static void Main(string[] args)
         {
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            
+
+
             MatchProcessor.LoadAllData();
             var fighters = MatchProcessor.Fighters;
             var matches = MatchProcessor.Matches;
@@ -41,12 +48,18 @@ namespace BjjElo
                 fighter2.EloRanking -= eloDifference;
             }
 
-            Console.WriteLine($"Anzahl Kämpfe: {matches.Count}");
 
-            foreach (var fighter in fighters.OrderByDescending(f => f.EloRanking))
-                Console.WriteLine(fighter + " Anzahl Kämpfe: " + matches.Count(m => m.Fighter1 == fighter || m.Fighter2 == fighter).ToString());
 
-            Console.ReadLine();
+
+            Application.Run(new Form1(fighters, matches));
+
+
+            //Console.WriteLine($"Anzahl Kämpfe: {matches.Count}");
+
+            //foreach (var fighter in fighters.OrderByDescending(f => f.EloRanking))
+            //    Console.WriteLine(fighter + " Anzahl Kämpfe: " + matches.Count(m => m.Fighter1 == fighter || m.Fighter2 == fighter).ToString());
+
+            //Console.ReadLine();
         }
     }
 }
