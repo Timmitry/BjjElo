@@ -1,0 +1,27 @@
+﻿<Window x:Class="BjjEloGui.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BjjEloGui"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="600">
+    <DockPanel Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <DataGrid x:Name="dataGrid" DockPanel.Dock="Left" Height="Auto" AutoGenerateColumns="False" SelectedCellsChanged="dataGrid_SelectedCellsChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Vorname" Binding="{Binding FirstName}"/>
+                <DataGridTextColumn Header="Nachname" Binding="{Binding LastName}"/>
+                <DataGridTextColumn Header="Rating" Binding="{Binding Path=EloRating, StringFormat={}{0:N0}}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="dataGrid1" DockPanel.Dock="Left" Margin="20,0,0,0" Height="Auto" Width="Auto" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Vorname" Binding="{Binding Opponent.FirstName}"/>
+                <DataGridTextColumn Header="Nachname" Binding="{Binding Opponent.LastName}"/>
+                <DataGridTextColumn Header="Rating" Binding="{Binding Path=Rating, StringFormat={}{0:N0}}"/>
+                <DataGridTextColumn Header="Ergebnis" Binding="{Binding Result}"/>
+                <DataGridTextColumn Header="Jahr" Binding="{Binding Year}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </DockPanel>
+</Window>

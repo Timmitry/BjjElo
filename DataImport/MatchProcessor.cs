@@ -26,6 +26,8 @@ namespace DataImport
 
     public static class MatchProcessor
     {
+        private static int NextFighterId = 0;
+
         public static HashSet<Fighter> Fighters { get; } = new HashSet<Fighter>();
         public static HashSet<MatchWithoutId> Matches { get; } = new HashSet<MatchWithoutId>();
 
@@ -34,20 +36,6 @@ namespace DataImport
         public static void LoadAllData()
         {
             var filepath = "..\\..\\..\\Data\\";
-            //var bjjHeroes = new List<string>()
-            //{
-            //    "Roger Gracie",
-            //    "Alexandre Ribeiro",
-            //    "Felipe Pena",
-            //    "Rodolfo Vieira",
-            //    "Marcus Almeida",
-            //    "Leonardo Nogueira",
-            //    "Dimitrius Souza",
-            //    "Braga Neto",
-            //    "Rodrigo Comprido",
-            //    "Saulo Ribeiro",
-            //    "Andre Galvao"
-            //};
             var bjjHeroesFiles = Directory.GetFiles(filepath, "*.csv", SearchOption.TopDirectoryOnly);
 
             foreach (var file in bjjHeroesFiles)
@@ -135,7 +123,7 @@ namespace DataImport
 
             if (fighter == null)
             {
-                fighter = new Fighter(null, firstname, lastname, null);
+                fighter = new Fighter(NextFighterId++, firstname, lastname, null);
                 Fighters.Add(fighter);
             }
 

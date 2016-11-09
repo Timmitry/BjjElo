@@ -68,5 +68,15 @@ namespace BaseClasses
         {
             return !(match1 == match2);
         }
+
+        public static Result InvertResult(Result result)
+        {
+            if (result == Result.Win)
+                return Result.Loss;
+            if (result == Result.Loss)
+                return Result.Win;
+
+            return Result.Draw;
+        }
     }
 }

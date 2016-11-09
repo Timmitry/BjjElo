@@ -6,25 +6,27 @@ using System.Threading.Tasks;
 
 namespace BaseClasses
 {
-  public class Fighter
-  {
-    public int? FighterId { get; set; }
-    public string LastName { get; }
-    public string FirstName { get; }
-    public double? EloRanking { get; set; }
-
-    public Fighter(int? fighterId, string firstName, string lastName, double? eloRanking)
+    public class Fighter
     {
-      this.FighterId = fighterId;
-      this.LastName = lastName;
-      this.FirstName = firstName;
-      this.EloRanking = eloRanking;
-    }
+        public int? FighterId { get; set; }
+        public string LastName { get; }
+        public string FirstName { get; }
+        public double? EloRating { get; set; }
 
-    public override string ToString()
-    {
-      return $"{this.FirstName} {this.LastName}, Rating: {this.EloRanking:N0}";
-    }
+        public string FullName => FirstName + " " + LastName;
+
+        public Fighter(int? fighterId, string firstName, string lastName, double? eloRating)
+        {
+            this.FighterId = fighterId;
+            this.LastName = lastName;
+            this.FirstName = firstName;
+            this.EloRating = eloRating;
+        }
+
+        public override string ToString()
+        {
+            return $"{this.FirstName} {this.LastName}, Rating: {this.EloRating:N0}";
+        }
 
 
         public override bool Equals(object obj)
