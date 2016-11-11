@@ -1,0 +1,15 @@
+PYTHON WEB PARSER
+
+1)
+	required python version -> python 2.x
+	required external libs -> bs4
+
+2)
+	required input -> a web page including a list/table/etc of links to fighter-profiles
+	required code -> a class which parses fighter-profiles of a specific source (class for bjjheroes.com is present)
+
+3)
+	configuration -> create a new initWEBSOURCE-class and modify the conf-object
+
+4)
+	expected output -> a csv-file containing fight-data of several fighters
