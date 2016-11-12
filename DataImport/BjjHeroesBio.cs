@@ -19,7 +19,7 @@ namespace DataImport
 
             foreach (var line in lines.Skip(1))
             {
-                var values = line.Split(',');
+                var values = line.Split(';');
 
                 if (values.Length < 7)
                     continue;

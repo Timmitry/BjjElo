@@ -34,28 +34,38 @@ namespace BjjEloGui
             this.fighters = MatchProcessor.Fighters;
             this.matches = MatchProcessor.Matches;
 
+
+            // Set initial elo ratings for all fighters.
             foreach (var fighter in fighters)
                 fighter.EloRating = 2000;
 
-            // Test to see how the initial ranking affects the final ranking. Hint: It has almost no influence ;)
-            var almeida = fighters.Single(f => f.LastName.Equals("Almeida") && f.FirstName.Equals("Marcus"));
-            almeida.EloRating = 2000;
 
-            var kFactor = 32;
-            var difference = 400;
+            //// Test to see how the initial ranking of a fighter affects his final ranking. Hint: It has almost no influence ;)
+            //var almeida = fighters.Single(f => f.LastName.Equals("Almeida") && f.FirstName.Equals("Marcus"));
+            //almeida.EloRating = 2000;
 
-            foreach (var match in matches.OrderBy(m => m.Year))
+
+
+            // The matches are first sorted and grouped by year.
+            // For each year, the elo rating difference for each fighter is calculated,
+            // and added at the end of the year.
+            foreach (var year in matches.GroupBy(m => m.Year).OrderBy(g => g.Key))
             {
-                var fighter1 = match.Fighter1;
-                var fighter2 = match.Fighter2;
+                foreach (var match in year)
+                {
+                    // The points won or lost by fighter 1 in the match.
+                    double pointsWonOrLost = CalculateEloPoints(match);
 
-                var expectedResult = 1 / (1 + Math.Pow(10, (double)(fighter2.EloRating - fighter1.EloRating) / difference));
+                    // The points are added to the score of fighter 1, and subtracted from the score of fighter 2.
+                    match.Fighter1.EloRatingDifference += pointsWonOrLost;
+                    match.Fighter2.EloRatingDifference -= pointsWonOrLost;
+                }
 
-                var eloDifference = kFactor * ((int)match.Result / 2.0 - expectedResult);
-
-                fighter1.EloRating += eloDifference;
-                fighter2.EloRating -= eloDifference;
+                foreach (var fighter in fighters)
+                    fighter.UpdateEloRating();
             }
+
+
 
 
             var datagridInfo =
@@ -65,7 +75,7 @@ namespace BjjEloGui
                     Fighter = f.FirstName + " " + f.LastName,
                     Rating = (int)f.EloRating,
                     Matches = matches.Count(m => m.Fighter1 == f || m.Fighter2 == f),
-                    Victories = matches.Count(m => (m.Fighter1 == f && m.Result == Result.Win) || (m.Fighter2 == f && m.Result == Result.Loss))
+                    Victories = matches.Count(m => (m.Fighter1 == f && m.Result == MatchResult.WinBySubmission) || (m.Fighter2 == f && m.Result == MatchResult.LossBySubmission))
                 })
                 .OrderByDescending(f => f.Rating)
                 .ToList();
@@ -73,7 +83,60 @@ namespace BjjEloGui
             //dataGrid.ItemsSource = datagridInfo;
 
             dataGrid.ItemsSource = fighters;
+
+
+
+
+            dataGridMatches.ItemsSource = MatchProcessor.RawMatchData;
+
         }
+
+
+
+
+
+        /// <summary>
+        /// Calculates the points won or lost by the fighters in the match.
+        /// The result has to be added to the elo rating of fighter 1, and subtracted from the elo rating of fighter 2.
+        /// </summary>
+        private static double CalculateEloPoints(MatchWithoutId match)
+        {
+            // The expected result of the match. Between 0 (loss by submission) and 1 (win by submission).
+            var expectedResult = 1 / (1 + Math.Pow(10, (double)(match.Fighter2.EloRating - match.Fighter1.EloRating) / Constants.EloDifference));
+
+            // The actual result of the match.
+            double actualResult;
+            switch (match.Result)
+            {
+                case (MatchResult.WinBySubmission):
+                    actualResult = 1.0;
+                    break;
+
+                case (MatchResult.WinByPoints):
+                    actualResult = Constants.WinByPointsFactor;
+                    break;
+
+                case (MatchResult.Draw):
+                    actualResult = 0.5;
+                    break;
+
+                case (MatchResult.LossByPoints):
+                    actualResult = 1 - Constants.WinByPointsFactor;
+                    break;
+
+                case (MatchResult.LossBySubmission):
+                    actualResult = 0;
+                    break;
+
+                default:
+                    throw new ArgumentException("Invalid match result detected!");
+            }
+
+            // The points won or lost by the fighters.
+            var eloDifference = Constants.EloFactor * (actualResult - expectedResult);
+            return eloDifference;
+        }
+
 
 
 
@@ -89,7 +152,7 @@ namespace BjjEloGui
             var matchesOfSelectedFighter2 =
            matches
            .Where(m => m.Fighter2 == fighter)
-           .Select(m => new { Opponent = m.Fighter1, Rating = (int)m.Fighter1.EloRating, Result = MatchWithoutId.InvertResult(m.Result), Year = m.Year });
+           .Select(m => new { Opponent = m.Fighter1, Rating = (int)m.Fighter1.EloRating, Result = MatchWithoutId.InvertMatchResult(m.Result), Year = m.Year });
 
 
             dataGrid1.ItemsSource = matchesOfSelectedFighter1.Concat(matchesOfSelectedFighter2).ToList();

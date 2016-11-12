@@ -1,64 +1,64 @@
 Opponent,W/L,Method,Competition,Weight,Stage,Year
-Clark Gracie,L,Kimura,Pan American,82KG,R1,2014
-Gilbert Burns,L,Pts: 2x0,Copa Podio,77KG,GP,2014
-Gianni Grippo,D,Pts: 2x2,Copa Podio,77KG,GP,2014
-Leandro Lo,L,Pts: 8x0,Copa Podio,77KG,SF,2014
-Leandro Lo,L,Adv,World Champ.,82KG,1/4F,2014
-Kit Dale,D,N/A,Polaris,ABS,SPF,2015
-Erberth Santos,L,Pts: 0x0, Adv,European,ABS,R3,2015
-Davi Ramos,L,Pts: 2x0,European,82KG,1/4F,2015
-Felipe Cesar,L,Pts: 4x2,Gramado Trials,85KG,SF,2015
-Otavio Sousa,L,Referee Decision,Pan American,82KG,1/4F,2015
-William Martins,L,Adv,Rio Fall Open,ABS,R1,2015
-Sandro Vieira,L,Points,Rio Fall Open,82KG,SF,2015
-Keenan Cornelius,L,Armbar,World Pro,85KG,R2,2015
-Leandro Lo,L,Pts: 4x2,World Pro,ABS,R2,2015
-Claudio Mattos,L,Referee Decision,Brasileiro,82KG,SF,2015
-Erberth Santos,L,Pts: 0x0, Adv,Brasileiro,ABS,SF,2015
-Murilo Santana,L,Referee Decision,World Champ.,82KG,1/8F,2015
-Otavio Sousa,L,Pts: 2x2, Adv,IBJJF NY Pro,82KG,F,2015
-Marcos Tinoco,L,Referee Decision,Pan American,82KG,R1,2016
-Bernardo Faria,L,Triangle,Pan American,ABS,1/8F,2016
-Lucas Barbosa,L,Pts: 5x2,San Antonio Open,88KG,F,2016
-Manuel Ribamar,L,Pts: 6x4,San Antonio Open,ABS,SF,2016
-Jurandir Vieira,L,Points,Miami Spring Open,88KG,SF,2016
-Ricardo Rezende,L,Armbar,Miami Spring Open,ABS,SF,2016
-Dillon Danis,L,Pts: 0x0, Adv,World Champ.,82KG,R2,2016
-Edwin Najmi,L,Injury,Grand Slam - LA,77KG,F,2016
-Fernando Vieira,D,---,Copa Podio,77KG,GP,2014
-M. Andre,W,Choke from back,Copa Podio,77KG,GP,2014
-Gilbert Burns,W,Pts: 2x2, Pen,Copa Podio,77KG,3PLC,2014
-Unknown,W,Armbar,Rio Open,ABS,R1,2014
-Andre 'Deco',W,Pts: 2x2, Adv,Rio Open,ABS,R2,2014
-Cassio Francis,W,Adv,Rio Open,ABS,1/4F,2014
-Alan Regis,W,Adv,Rio Open,ABS,SF,2014
-Unknown,W,Pts: 10x4,Rio Open,82KG,1/4F,2014
-Diego Vivaldo,W,Adv,Rio Open,82KG,SF,2014
-Felipe Cesar,W,Referee Decision,SP Open,82KG,SF,2014
-Tiago Alves,W,Pts: 1x0,Rematch G.,82KG,SPF,2014
-Vinicius Nascimento,W,Pts: 6x0,European,ABS,R2,2015
-Youngam Noh,W,Pts: 2x2, Adv,European,82KG,R1,2015
-Thomas Oyarzun,W,Adv,European,82KG,R2,2015
-Elfraklin Souza,W,Referee Decision,Gramado Trials,85KG,R1,2015
-Eduardo Santoro,W,Pts: 0x0, Adv,Gramado Trials,85KG,1/4F,2015
-Jonatas Novaes,W,Pts: 6x0,Pan American,82KG,R1,2015
-Caio Almeida,W,Pts: 2x2, Adv,Pan American,82KG,R3,2015
-Ricardo Lima,W,Bow and arrow,Rio Fall Open,82KG,1/4F,2015
-Fabio Pulita,W,Pts: 0x0, Adv,World Pro,85KG,R1,2015
-Antonio Junior,W,Pts: 2x0,World Pro,ABS,R1,2015
-Felipe Grili,W,Points,Brasileiro,ABS,R1,2015
-Julian Matsumoto,W,Points,Brasileiro,ABS,R2,2015
-Dimitrius Souza,W,N/A,Brasileiro,ABS,1/4F,2015
-Ricardo Rezende,W,Pts: 0x0, Adv,Miami Open,88KG,SF,2015
-Thiago Sa,W,Pts: 4x2,Miami Open,88KG,F,2015
-Nathan Mendelsohn,W,Pts: 2x0,IBJJF NY Pro,82KG,1/4F,2015
-Mansher Khera,W,Pts: 4x0,IBJJF NY Pro,82KG,SF,2015
-Nathan Mendhelson,W,Pts: 6x0,Pan American,ABS,R1,2016
-Olivier Kee-Seng,W,Armbar,Boston Spring O.,82KG,SF,2016
-Sean Fisher,W,Pts: 8x0,Boston Spring O.,82KG,F,2016
-Olivier Huerre,W,Bow and arrow,Boston Spring O.,ABS,SF,2016
-Gregor Gracie,W,Referee Decision,Boston Spring O.,ABS,F,2016
-Jose Portillo,W,Points,San Antonio Open,88KG,SF,2016
-Ryan Golgosky,W,Bow and arrow,American Nats,82KG,SF,2016
-Manuel Ribamar,W,Referee Decision,American Nats,82KG,F,2016
-Bruno Alves,W,Pts: 4x0,Grand Slam - LA,77KG,SF,2016
+Clark Gracie;L;Kimura;Pan American;82KG;R1;2014
+Gilbert Burns;L;Pts: 2x0;Copa Podio;77KG;GP;2014
+Gianni Grippo;D;Pts: 2x2;Copa Podio;77KG;GP;2014
+Leandro Lo;L;Pts: 8x0;Copa Podio;77KG;SF;2014
+Leandro Lo;L;Adv;World Champ.;82KG;1/4F;2014
+Kit Dale;D;N/A;Polaris;ABS;SPF;2015
+Erberth Santos;L;Pts: 0x0, Adv;European;ABS;R3;2015
+Davi Ramos;L;Pts: 2x0;European;82KG;1/4F;2015
+Felipe Cesar;L;Pts: 4x2;Gramado Trials;85KG;SF;2015
+Otavio Sousa;L;Referee Decision;Pan American;82KG;1/4F;2015
+William Martins;L;Adv;Rio Fall Open;ABS;R1;2015
+Sandro Vieira;L;Points;Rio Fall Open;82KG;SF;2015
+Keenan Cornelius;L;Armbar;World Pro;85KG;R2;2015
+Leandro Lo;L;Pts: 4x2;World Pro;ABS;R2;2015
+Claudio Mattos;L;Referee Decision;Brasileiro;82KG;SF;2015
+Erberth Santos;L;Pts: 0x0, Adv;Brasileiro;ABS;SF;2015
+Murilo Santana;L;Referee Decision;World Champ.;82KG;1/8F;2015
+Otavio Sousa;L;Pts: 2x2, Adv;IBJJF NY Pro;82KG;F;2015
+Marcos Tinoco;L;Referee Decision;Pan American;82KG;R1;2016
+Bernardo Faria;L;Triangle;Pan American;ABS;1/8F;2016
+Lucas Barbosa;L;Pts: 5x2;San Antonio Open;88KG;F;2016
+Manuel Ribamar;L;Pts: 6x4;San Antonio Open;ABS;SF;2016
+Jurandir Vieira;L;Points;Miami Spring Open;88KG;SF;2016
+Ricardo Rezende;L;Armbar;Miami Spring Open;ABS;SF;2016
+Dillon Danis;L;Pts: 0x0, Adv;World Champ.;82KG;R2;2016
+Edwin Najmi;L;Injury;Grand Slam - LA;77KG;F;2016
+Fernando Vieira;D;---;Copa Podio;77KG;GP;2014
+M. Andre;W;Choke from back;Copa Podio;77KG;GP;2014
+Gilbert Burns;W;Pts: 2x2, Pen;Copa Podio;77KG;3PLC;2014
+Unknown;W;Armbar;Rio Open;ABS;R1;2014
+Andre 'Deco';W;Pts: 2x2, Adv;Rio Open;ABS;R2;2014
+Cassio Francis;W;Adv;Rio Open;ABS;1/4F;2014
+Alan Regis;W;Adv;Rio Open;ABS;SF;2014
+Unknown;W;Pts: 10x4;Rio Open;82KG;1/4F;2014
+Diego Vivaldo;W;Adv;Rio Open;82KG;SF;2014
+Felipe Cesar;W;Referee Decision;SP Open;82KG;SF;2014
+Tiago Alves;W;Pts: 1x0;Rematch G.;82KG;SPF;2014
+Vinicius Nascimento;W;Pts: 6x0;European;ABS;R2;2015
+Youngam Noh;W;Pts: 2x2, Adv;European;82KG;R1;2015
+Thomas Oyarzun;W;Adv;European;82KG;R2;2015
+Elfraklin Souza;W;Referee Decision;Gramado Trials;85KG;R1;2015
+Eduardo Santoro;W;Pts: 0x0, Adv;Gramado Trials;85KG;1/4F;2015
+Jonatas Novaes;W;Pts: 6x0;Pan American;82KG;R1;2015
+Caio Almeida;W;Pts: 2x2, Adv;Pan American;82KG;R3;2015
+Ricardo Lima;W;Bow and arrow;Rio Fall Open;82KG;1/4F;2015
+Fabio Pulita;W;Pts: 0x0, Adv;World Pro;85KG;R1;2015
+Antonio Junior;W;Pts: 2x0;World Pro;ABS;R1;2015
+Felipe Grili;W;Points;Brasileiro;ABS;R1;2015
+Julian Matsumoto;W;Points;Brasileiro;ABS;R2;2015
+Dimitrius Souza;W;N/A;Brasileiro;ABS;1/4F;2015
+Ricardo Rezende;W;Pts: 0x0, Adv;Miami Open;88KG;SF;2015
+Thiago Sa;W;Pts: 4x2;Miami Open;88KG;F;2015
+Nathan Mendelsohn;W;Pts: 2x0;IBJJF NY Pro;82KG;1/4F;2015
+Mansher Khera;W;Pts: 4x0;IBJJF NY Pro;82KG;SF;2015
+Nathan Mendhelson;W;Pts: 6x0;Pan American;ABS;R1;2016
+Olivier Kee-Seng;W;Armbar;Boston Spring O.;82KG;SF;2016
+Sean Fisher;W;Pts: 8x0;Boston Spring O.;82KG;F;2016
+Olivier Huerre;W;Bow and arrow;Boston Spring O.;ABS;SF;2016
+Gregor Gracie;W;Referee Decision;Boston Spring O.;ABS;F;2016
+Jose Portillo;W;Points;San Antonio Open;88KG;SF;2016
+Ryan Golgosky;W;Bow and arrow;American Nats;82KG;SF;2016
+Manuel Ribamar;W;Referee Decision;American Nats;82KG;F;2016
+Bruno Alves;W;Pts: 4x0;Grand Slam - LA;77KG;SF;2016

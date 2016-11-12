@@ -13,6 +13,16 @@ namespace BaseClasses
         public string FirstName { get; }
         public double? EloRating { get; set; }
 
+        /// <summary>
+        /// Elo points that the fighter has won or lost, but who are not yet added to his rating.
+        /// </summary>
+        /// <remarks>
+        /// If a fighter has multiple fights in one tournament,
+        /// his elo ranking is only updated once after the tournament,
+        /// and not after every single match.
+        /// </remarks>
+        public double EloRatingDifference { get; set; } = 0;
+
         public string FullName => FirstName + " " + LastName;
 
         public Fighter(int? fighterId, string firstName, string lastName, double? eloRating)
@@ -55,6 +65,12 @@ namespace BaseClasses
                 return false;
 
             return fighter1.Equals(fighter2);
+        }
+
+        public void UpdateEloRating()
+        {
+            this.EloRating += this.EloRatingDifference;
+            this.EloRatingDifference = 0;
         }
 
         public static bool operator !=(Fighter fighter1, Fighter fighter2)

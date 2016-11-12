@@ -11,7 +11,7 @@ namespace BaseClasses
         public int? MatchId { get; set; }
         public Fighter Fighter1 { get; set; }
         public Fighter Fighter2 { get; set; }
-        public Result Result { get; set; }
+        public MatchResult Result { get; set; }
         public int Year { get; set; }
 
 
@@ -34,10 +34,10 @@ namespace BaseClasses
             }
             else if (this.Fighter1.Equals(match.Fighter2) && this.Fighter2.Equals(match.Fighter1))
             {
-                if (this.Result == Result.Draw && match.Result != Result.Draw)
+                if (this.Result == MatchResult.Draw && match.Result != MatchResult.Draw)
                     return false;
 
-                if ((this.Result == Result.Win && match.Result != Result.Loss) || (this.Result == Result.Loss && match.Result != Result.Win))
+                if ((this.Result == MatchResult.WinBySubmission && match.Result != MatchResult.LossBySubmission) || (this.Result == MatchResult.LossBySubmission && match.Result != MatchResult.WinBySubmission))
                     return false;
             }
             else
@@ -69,14 +69,39 @@ namespace BaseClasses
             return !(match1 == match2);
         }
 
-        public static Result InvertResult(Result result)
-        {
-            if (result == Result.Win)
-                return Result.Loss;
-            if (result == Result.Loss)
-                return Result.Win;
 
-            return Result.Draw;
+
+        /// <summary>
+        /// Inverts the result of a match, so that win becomes a loss and vice versa.
+        /// </summary>
+        /// <param name="result">The result of the match.</param>
+        /// <returns>The inverted result. A win becomes a loss, a loss a win, and a draw stays a draw.</returns>
+        /// <remarks>
+        /// Match results are always saved by the perspective of fighter 1 of the match.
+        /// This function can be used to convert the result to the perspective of fighter 2.
+        /// </remarks>
+        public static MatchResult InvertMatchResult(MatchResult result)
+        {
+            switch (result)
+            {
+                case (MatchResult.WinBySubmission):
+                    return MatchResult.LossBySubmission;
+
+                case (MatchResult.WinByPoints):
+                    return MatchResult.LossByPoints;
+
+                case (MatchResult.Draw):
+                    return MatchResult.Draw;
+
+                case (MatchResult.LossByPoints):
+                    return MatchResult.WinByPoints;
+
+                case (MatchResult.LossBySubmission):
+                    return MatchResult.WinBySubmission;
+
+                default:
+                    throw new ArgumentException("The input result is invalid!");
+            }
         }
     }
 }

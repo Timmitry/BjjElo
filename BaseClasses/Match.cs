@@ -11,9 +11,9 @@ namespace BaseClasses
     public int? MatchId { get; }
     public int FighterId1 { get; }
     public int FighterId2 { get; }
-    public Result Result { get; }
+    public MatchResult Result { get; }
 
-    public Match(int matchId, int fighterId1, int fighterId2, Result result)
+    public Match(int matchId, int fighterId1, int fighterId2, MatchResult result)
     {
       this.MatchId = matchId;
       this.FighterId1 = fighterId1;

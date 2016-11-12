@@ -23,8 +23,14 @@ namespace ScrapeData
             var rows = htmlDoc.DocumentNode.SelectNodes("//table/tbody/tr");
 
 
-            foreach(var row in rows)
+            Console.WriteLine("Starting to gather match information.");
+            Console.WriteLine($"{rows.Count} fighter websites are to be processed.");
+
+            int i = 1;
+            foreach (var row in rows)
             {
+                Console.Write($"({i++}/{rows.Count}) ");
+
                 var cells = row.SelectNodes("./td");
 
                 var firstName = cells[0].InnerText.Trim();
@@ -74,7 +80,7 @@ namespace ScrapeData
             }
             catch
             {
-                Console.WriteLine($"Website for {firstname} {lastname} does not exist, skipping...");
+                Console.Write($"Website for {firstname} {lastname} does not exist, skipping...\n");
                 return;
             }
 
@@ -87,7 +93,7 @@ namespace ScrapeData
 
             if (fighterInfo == null)
             {
-                Console.WriteLine($"No fight history for fighter {firstname} {lastname} found, skipping...");
+                Console.Write($"No fight history for fighter {firstname} {lastname} found, skipping...\n");
                 return;
             }
 
@@ -113,12 +119,12 @@ namespace ScrapeData
                 string stage = cells[6].InnerText;
                 string year = cells[7].InnerText;
 
-                sb.Append(opponent).Append(",");
-                sb.Append(result).Append(",");
-                sb.Append(method).Append(",");
-                sb.Append(competition).Append(",");
-                sb.Append(weightclass).Append(",");
-                sb.Append(stage).Append(",");
+                sb.Append(opponent).Append(";");
+                sb.Append(result).Append(";");
+                sb.Append(method).Append(";");
+                sb.Append(competition).Append(";");
+                sb.Append(weightclass).Append(";");
+                sb.Append(stage).Append(";");
                 sb.Append(year).AppendLine();
 
             }
@@ -131,7 +137,7 @@ namespace ScrapeData
             var filePath = "..//..//..//Data//" + fighterNameFile + ".csv";
             System.IO.File.WriteAllText(filePath, sb.ToString());
 
-            Console.WriteLine($"Fight history for fighter {firstname} {lastname} successfully scraped!");
+            Console.Write($"Fight history for fighter {firstname} {lastname} successfully scraped!\n");
         }
     }
 }

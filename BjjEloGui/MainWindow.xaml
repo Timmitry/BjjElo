@@ -5,23 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BjjEloGui"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="600">
-    <DockPanel Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-        <DataGrid x:Name="dataGrid" DockPanel.Dock="Left" Height="Auto" AutoGenerateColumns="False" SelectedCellsChanged="dataGrid_SelectedCellsChanged">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Vorname" Binding="{Binding FirstName}"/>
-                <DataGridTextColumn Header="Nachname" Binding="{Binding LastName}"/>
-                <DataGridTextColumn Header="Rating" Binding="{Binding Path=EloRating, StringFormat={}{0:N0}}"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <DataGrid x:Name="dataGrid1" DockPanel.Dock="Left" Margin="20,0,0,0" Height="Auto" Width="Auto" AutoGenerateColumns="False">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Vorname" Binding="{Binding Opponent.FirstName}"/>
-                <DataGridTextColumn Header="Nachname" Binding="{Binding Opponent.LastName}"/>
-                <DataGridTextColumn Header="Rating" Binding="{Binding Path=Rating, StringFormat={}{0:N0}}"/>
-                <DataGridTextColumn Header="Ergebnis" Binding="{Binding Result}"/>
-                <DataGridTextColumn Header="Jahr" Binding="{Binding Year}" Width="*"/>
-            </DataGrid.Columns>
-        </DataGrid>
-    </DockPanel>
+        Title="BJJ Fighters and Matches" Height="500" Width="782.723">
+    <TabControl>
+        <TabItem Header="Raw Match Data">
+            <DockPanel Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <GroupBox DockPanel.Dock="Left" Header="Raw Match Data" BorderThickness="0">
+                    <DataGrid x:Name="dataGridMatches" Margin="0,10,0,0" Height="Auto" Width="Auto"/>
+                </GroupBox>
+            </DockPanel>
+        </TabItem>
+        <TabItem Header="Fighters">
+            <DockPanel Margin="10,10,10,10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                <GroupBox DockPanel.Dock="Left" Header="Fighters" BorderThickness="0">
+                    <DataGrid x:Name="dataGrid" Margin="0,10,0,0" Height="Auto" AutoGenerateColumns="False" SelectedCellsChanged="dataGrid_SelectedCellsChanged" Width="238">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Vorname" Binding="{Binding FirstName}"/>
+                            <DataGridTextColumn Header="Nachname" Binding="{Binding LastName}"/>
+                            <DataGridTextColumn Header="Rating" Binding="{Binding Path=EloRating, StringFormat={}{0:N0}}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+                <GroupBox DockPanel.Dock="Left" Margin="20,0,0,0" Header="All matches of the selected fighter" BorderThickness="0">
+                    <DataGrid x:Name="dataGrid1" Margin="0,10,0,0" Height="Auto" Width="Auto" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Vorname" Binding="{Binding Opponent.FirstName}"/>
+                            <DataGridTextColumn Header="Nachname" Binding="{Binding Opponent.LastName}"/>
+                            <DataGridTextColumn Header="Rating" Binding="{Binding Path=Rating, StringFormat={}{0:N0}}"/>
+                            <DataGridTextColumn Header="Ergebnis" Binding="{Binding Result}"/>
+                            <DataGridTextColumn Header="Jahr" Binding="{Binding Year}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </GroupBox>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
 </Window>

@@ -1,17 +1,44 @@
 ﻿namespace BaseClasses
 {
-    public enum Result
+    /// <summary>
+    /// Result of a match.
+    /// </summary>
+    public enum MatchResult
     {
-        Loss = 0,
-        Draw = 1,
-        Win = 2
+        /// <summary>
+        /// Fighter 1 lost the match by submission, Fighter 2 won.
+        /// </summary>
+        LossBySubmission,
+
+        /// <summary>
+        /// Fighter 1 lost the match by points, Fighter 2 won.
+        /// </summary>
+        LossByPoints,
+
+        /// <summary>
+        /// The match was a draw.
+        /// </summary>
+        Draw,
+
+        /// <summary>
+        /// Fighter 1 won the match by points, Fighter 2 lost.
+        /// </summary>
+        WinByPoints,
+
+        /// <summary>
+        /// Fighter 1 won the match by submission, Fighter 2 lost.
+        /// </summary>
+        WinBySubmission
     }
 
 
 
     /// <summary>
-    /// Wieght divisions.
+    /// Weight divisions.
     /// </summary>
+    /// <remarks>
+    /// All weights are only approximately, since weight divisions differ amongst organisations, and have changed historically.
+    /// </remarks>
     public enum WeightDivision
     {
         /// <summary>

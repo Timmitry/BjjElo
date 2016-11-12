@@ -30,7 +30,7 @@ namespace DataImport
 
         public static HashSet<Fighter> Fighters { get; } = new HashSet<Fighter>();
         public static HashSet<MatchWithoutId> Matches { get; } = new HashSet<MatchWithoutId>();
-
+        public static List<MatchInformation> RawMatchData { get; } = new List<MatchInformation>(100);
 
 
         public static void LoadAllData()
@@ -61,6 +61,8 @@ namespace DataImport
 
         public static void ProcessMatchInformations(IList<MatchInformation> matchInformations)
         {
+            RawMatchData.AddRange(matchInformations);
+
             foreach (var matchInfo in matchInformations)
             {
                 var fighter1 = GetOrCreateFighter(matchInfo.Fighter1);
@@ -69,17 +71,22 @@ namespace DataImport
                 if (fighter1 == null || fighter2 == null)
                     continue;
 
-                Result result;
+                // Win / loss by points?
+                var resultByPoints = matchInfo.Method.ToLower().Contains("pts") || matchInfo.Method.ToLower().Contains("points");
+
+                MatchResult result;
                 switch (matchInfo.Result)
                 {
                     case ("W"):
-                        result = Result.Win;
+                        result = resultByPoints ? MatchResult.WinByPoints : MatchResult.WinBySubmission;
                         break;
+
                     case ("L"):
-                        result = Result.Loss;
+                        result = resultByPoints ? MatchResult.LossByPoints : MatchResult.LossBySubmission;
                         break;
+
                     case ("D"):
-                        result = Result.Draw;
+                        result = MatchResult.Draw;
                         break;
                     default:
                         throw new ArgumentException("Result could not be analyzed!");
@@ -106,7 +113,7 @@ namespace DataImport
 
         public static Fighter GetOrCreateFighter(string fullName)
         {
-            if (fullName.Equals("Unknown") || fullName.Equals("Uknown")) 
+            if (fullName.Equals("Unknown") || fullName.Equals("Uknown"))
                 return null;
 
             var index = fullName.LastIndexOf(' ');

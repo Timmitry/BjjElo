@@ -1,63 +1,63 @@
 Opponent,W/L,Method,Competition,Weight,Stage,Year
-Bill Cooper,L,Lapel choke,World Champ.,82KG,R2,2008
-Sergio Moraes,L,Choke,World Champ.,82KG,SF,2009
-Claudio Calasans,L,Adv,World Pro.,83KG,SF,2011
-Gustavo Campos,L,Submission,World Champ.,82KG,RDS,2011
-Victor Estima,L,Triangle,European Open,82KG,F,2012
-Claudio Calasans,L,Pts: 4x2,World Champ.,82KG,1/4F,2012
-Leandro Lo,L,Pts: 2x0,Mundial CBJJE,82KG,SF,2013
-R. Evangelista,L,Referee Decision,Rome Open,ABS,F,2013
-Caio Terra,L,N/A,European NoGi,ABS,F,2013
-Leandro Lo,L,Armbar,Rio Open,82KG,F,2013
-Otavio Sousa,L,Armbar,World Champ.,82KG,SF,2014
-Tarsis Humphreys,L,Pts: 0x0, Adv,World Pro,85KG,R2,2015
-Yago Souza,L,Pts: 2x0,European Open,82KG,F,2016
-Felipe Pena,L,Choke from back,European Open,ABS,1/4F,2016
-Yago Souza,L,N/A,World Champ.,82KG,1/8F,2016
-Gabriel Arges,L,Referee Decision,Berkut 3,ABS,SPF,2016
-Victor Estima,W,Pts: 2x0,European Open,82KG,SF,2008
-Otavio Sousa,W,Adv,European Open,82KG,F,2008
-Otavio Sousa,W,Pts: 2x0,Brasileiro,82KG,F,2008
-Eduardo Rios,W,Points,Stenungsund Open,88KG,F,2008
-Otavio Sousa,W,Points,European,88KG,F,2009
-Pedro Bessa,W,Pts: 6x2,World Champ.,82KG,1/4F,2009
-Bruno Augusto,W,Submission,World Champ.,82KG,RDS,2011
-Gabriel Goulart,W,N/A,European Open,82KG,SF,2012
-Marcus Bello,W,Choke from back,World Champ.,82KG,R2,2012
-Bruno Alves,W,DQ,World Champ.,82KG,1/8F,2012
-Renato Morais,W,Armbar,Sweden Open,NA,NA,2012
-Unknown,W,Bow and arrow,UK Pro Trials,75KG,1/4F,2013
-Lucio Sergio,W,Referee Decision,UK Pro Trials,75KG,F,2013
-Jake Mackenzie,W,Choke,European Open,82KG,1/4F,2013
-Max Carvalho,W,Points,Rome Open,88KG,F,2013
-Oliver Geddes,W,Points,Rome Open,ABS,SF,2013
-Andre Monteiro,W,Points,European NoGi,ABS,1/4F,2013
-AJ Agazarm,W,Referee Decision,European NoGi,ABS,SF,2013
-Adriano Silva,W,Points,Rio Open,82KG,SF,2013
-Julien Cazier,W,N/A,London Open,82KG,SF,2013
-Max Carvalho,W,Points,London Open,82KG,F,2013
-Alan Oliveira,W,DQ,London Open,ABS,SF,2013
-Max Carvalho,W,Points,London Open,ABS,F,2013
-Tero Pyylampi,W,Pts: 5x2,Finnish Open,82KG,F,2013
-Jaime Canuto,W,Pts: 6x4,World Champ.,82KG,1/4F,2014
-Jack Magee,W,N/A,UK Pro Trials,85KG,1/4F,2015
-Unknown,W,Points,UK Pro Trials,85KG,SF,2015
-Viking Wong,W,Points,UK Pro Trials,85KG,F,2015
-Edcarlos de Lima,W,N/A,Rome Open,88KG,1/4F,2015
-Alberto Ortiz,W,N/A,Rome Open,88KG,SF,2015
-Darragh OConaill,W,Points,Rome Open,88KG,F,2015
-Nelton Pontes,W,Pts: 2x0,Rome Open,ABS,SF,2015
-Pedro Guaraci,W,Points,World Pro,85KG,R1,2015
-Jordi Lloveras,W,Armbar,European Open,82KG,1/4F,2016
-Charles Negromonte,W,Pts: 0x0, Adv,European Open,82KG,SF,2016
-Max Carvalho,W,Pts: 0x0, Adv,European Open,ABS,R1,2016
-Diogo Sampaio,W,Pts: 2x0,European Open,ABS,R2,2016
-Luca Anacoreta,W,Pts: 2x2, Adv,PNBJJC,88KG,GP,2016
-Gregorio Thomaz,W,Triangle,PNBJJC,88KG,GP,2016
-Gabriel Arges,W,DQ,PNBJJC,88KG,GP,2016
-Arya Esfandmaz,W,Points,UK National Pro,94KG,F,2016
-Arya Esfandmaz,W,Points,UK National Pro,ABS,F,2016
-Bruno Amorim,W,Pts: 6x0,London Grand Slam,77KG,SF,2016
-Pedro Fernandes,W,Choke from back,London Grand Slam,77KG,F,2016
-Luca Anacoreta,W,Pts: 4x2,World Champ.,82KG,R2,2016
-Reid Reale,W,N/A,British National,94KG,SF,2016
+Bill Cooper;L;Lapel choke;World Champ.;82KG;R2;2008
+Sergio Moraes;L;Choke;World Champ.;82KG;SF;2009
+Claudio Calasans;L;Adv;World Pro.;83KG;SF;2011
+Gustavo Campos;L;Submission;World Champ.;82KG;RDS;2011
+Victor Estima;L;Triangle;European Open;82KG;F;2012
+Claudio Calasans;L;Pts: 4x2;World Champ.;82KG;1/4F;2012
+Leandro Lo;L;Pts: 2x0;Mundial CBJJE;82KG;SF;2013
+R. Evangelista;L;Referee Decision;Rome Open;ABS;F;2013
+Caio Terra;L;N/A;European NoGi;ABS;F;2013
+Leandro Lo;L;Armbar;Rio Open;82KG;F;2013
+Otavio Sousa;L;Armbar;World Champ.;82KG;SF;2014
+Tarsis Humphreys;L;Pts: 0x0, Adv;World Pro;85KG;R2;2015
+Yago Souza;L;Pts: 2x0;European Open;82KG;F;2016
+Felipe Pena;L;Choke from back;European Open;ABS;1/4F;2016
+Yago Souza;L;N/A;World Champ.;82KG;1/8F;2016
+Gabriel Arges;L;Referee Decision;Berkut 3;ABS;SPF;2016
+Victor Estima;W;Pts: 2x0;European Open;82KG;SF;2008
+Otavio Sousa;W;Adv;European Open;82KG;F;2008
+Otavio Sousa;W;Pts: 2x0;Brasileiro;82KG;F;2008
+Eduardo Rios;W;Points;Stenungsund Open;88KG;F;2008
+Otavio Sousa;W;Points;European;88KG;F;2009
+Pedro Bessa;W;Pts: 6x2;World Champ.;82KG;1/4F;2009
+Bruno Augusto;W;Submission;World Champ.;82KG;RDS;2011
+Gabriel Goulart;W;N/A;European Open;82KG;SF;2012
+Marcus Bello;W;Choke from back;World Champ.;82KG;R2;2012
+Bruno Alves;W;DQ;World Champ.;82KG;1/8F;2012
+Renato Morais;W;Armbar;Sweden Open;NA;NA;2012
+Unknown;W;Bow and arrow;UK Pro Trials;75KG;1/4F;2013
+Lucio Sergio;W;Referee Decision;UK Pro Trials;75KG;F;2013
+Jake Mackenzie;W;Choke;European Open;82KG;1/4F;2013
+Max Carvalho;W;Points;Rome Open;88KG;F;2013
+Oliver Geddes;W;Points;Rome Open;ABS;SF;2013
+Andre Monteiro;W;Points;European NoGi;ABS;1/4F;2013
+AJ Agazarm;W;Referee Decision;European NoGi;ABS;SF;2013
+Adriano Silva;W;Points;Rio Open;82KG;SF;2013
+Julien Cazier;W;N/A;London Open;82KG;SF;2013
+Max Carvalho;W;Points;London Open;82KG;F;2013
+Alan Oliveira;W;DQ;London Open;ABS;SF;2013
+Max Carvalho;W;Points;London Open;ABS;F;2013
+Tero Pyylampi;W;Pts: 5x2;Finnish Open;82KG;F;2013
+Jaime Canuto;W;Pts: 6x4;World Champ.;82KG;1/4F;2014
+Jack Magee;W;N/A;UK Pro Trials;85KG;1/4F;2015
+Unknown;W;Points;UK Pro Trials;85KG;SF;2015
+Viking Wong;W;Points;UK Pro Trials;85KG;F;2015
+Edcarlos de Lima;W;N/A;Rome Open;88KG;1/4F;2015
+Alberto Ortiz;W;N/A;Rome Open;88KG;SF;2015
+Darragh OConaill;W;Points;Rome Open;88KG;F;2015
+Nelton Pontes;W;Pts: 2x0;Rome Open;ABS;SF;2015
+Pedro Guaraci;W;Points;World Pro;85KG;R1;2015
+Jordi Lloveras;W;Armbar;European Open;82KG;1/4F;2016
+Charles Negromonte;W;Pts: 0x0, Adv;European Open;82KG;SF;2016
+Max Carvalho;W;Pts: 0x0, Adv;European Open;ABS;R1;2016
+Diogo Sampaio;W;Pts: 2x0;European Open;ABS;R2;2016
+Luca Anacoreta;W;Pts: 2x2, Adv;PNBJJC;88KG;GP;2016
+Gregorio Thomaz;W;Triangle;PNBJJC;88KG;GP;2016
+Gabriel Arges;W;DQ;PNBJJC;88KG;GP;2016
+Arya Esfandmaz;W;Points;UK National Pro;94KG;F;2016
+Arya Esfandmaz;W;Points;UK National Pro;ABS;F;2016
+Bruno Amorim;W;Pts: 6x0;London Grand Slam;77KG;SF;2016
+Pedro Fernandes;W;Choke from back;London Grand Slam;77KG;F;2016
+Luca Anacoreta;W;Pts: 4x2;World Champ.;82KG;R2;2016
+Reid Reale;W;N/A;British National;94KG;SF;2016
