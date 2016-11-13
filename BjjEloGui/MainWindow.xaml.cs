@@ -65,6 +65,9 @@ namespace BjjEloGui
                     fighter.UpdateEloRating();
             }
 
+            var matchesPerFighter = fighters.ToDictionary(f => f,
+                f => matches.Where(m => m.Fighter1 == f || m.Fighter2 == f).ToList()
+                );
 
 
 
@@ -74,8 +77,8 @@ namespace BjjEloGui
                 {
                     Fighter = f.FirstName + " " + f.LastName,
                     Rating = (int)f.EloRating,
-                    Matches = matches.Count(m => m.Fighter1 == f || m.Fighter2 == f),
-                    Victories = matches.Count(m => (m.Fighter1 == f && m.Result == MatchResult.WinBySubmission) || (m.Fighter2 == f && m.Result == MatchResult.LossBySubmission))
+                    Matches =  matchesPerFighter[f].Count(), // matches.Count(m => m.Fighter1 == f || m.Fighter2 == f),
+                    Victories =  matchesPerFighter[f].Count(m => (m.Fighter1 == f && m.Result == MatchResult.WinBySubmission) || (m.Fighter2 == f && m.Result == MatchResult.LossBySubmission))
                 })
                 .OrderByDescending(f => f.Rating)
                 .ToList();
