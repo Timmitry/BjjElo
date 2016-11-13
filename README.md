@@ -15,3 +15,6 @@ The Elo rating could provide a good measure of a competitors strength. Of course
 
 # Project status
 Currently, I am just testing the concept. The most difficult part is to gather example data, since complete brackets are only seldomly published. I found some single match results for the World Championships 2016 at http://www.bjjheroes.com/bjj-news/ibjjf-2016-world-jiu-jitsu-championship-full-results-buchecha-makes-history, and at the same website, there are listings of matches for individual fighters, e.g. http://www.bjjheroes.com/bjj-fighters/roger-gracie-bio. If you found other sources, please let me know!
+
+# More datasources
+* IBJJF Tournament Brackets: http://events.ibjjf.com/, e.g. http://events.ibjjf.com/sportos/application/sheet/index.php?idevent=434&dayofevent=2&temp=true
